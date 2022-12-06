@@ -9,6 +9,9 @@ class Deck extends Model
 {
     use HasFactory;
 
+    protected $table = 'deck';
+    public $timestamps = false;
+
     protected $fillable = [
         'nombre',
         'tipo-deck',

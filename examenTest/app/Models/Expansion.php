@@ -9,6 +9,10 @@ class Expansion extends Model
 {
     use HasFactory;
 
+    protected $table = 'expansion';
+
+    public $timestamps = false;
+
     protected $fillable = [
         'nombre',
         'precio',

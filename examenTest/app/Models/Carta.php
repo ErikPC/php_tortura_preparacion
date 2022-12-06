@@ -10,6 +10,10 @@ class Carta extends Model
 {
     use HasFactory;
 
+    protected $table = 'carta';
+
+    public $timestamps = false;
+
     protected $fillable = [
         'nombre',
         'precio',
