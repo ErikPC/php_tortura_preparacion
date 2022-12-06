@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Deck extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+        'tipo-deck',
+        'cantidad-cartas',
+        'precio',
+        'id-deck'
+
+    ];
+
+    public function carta()
+    {
+        return $this->hasMany(Carta::class);
+    }
 }
