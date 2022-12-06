@@ -17,7 +17,11 @@ class DeckFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'nombre' => fake()->realTextBetween(1, 10),
+            'tipo-deck' => fake()->realTextBetween(1, 10),
+            'cantidad-cartas' => 50,
+            'precio' => 10.99,
+            'id-deck' => fake()->realTextBetween(1, 10)
         ];
     }
 }
