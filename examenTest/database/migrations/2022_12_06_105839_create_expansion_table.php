@@ -16,6 +16,12 @@ return new class extends Migration
         Schema::create('expansion', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->double('precion');
+            $table->date('fecha');
+            $table->string('descripcion');
+            $table->integer('cantidad-cartas');
+            $table->string('id-ex');
         });
     }
 

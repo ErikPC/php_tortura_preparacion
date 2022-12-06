@@ -14,8 +14,12 @@ return new class extends Migration
     public function up()
     {
         Schema::create('deck', function (Blueprint $table) {
-            $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('tipo-deck');
+            $table->integer('cantidad-cartas');
+            $table->double('precio');
+            $table->string('id-deck')->unique();
         });
     }
 
