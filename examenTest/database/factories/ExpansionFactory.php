@@ -17,7 +17,7 @@ class ExpansionFactory extends Factory
     public function definition()
     {
         return [
-            'nombre' => fake()->realTextBetween(1.10),
+            'nombre' => fake()->realTextBetween(1, 10),
             'precio' => 110.00,
             'fecha' => fake()->date(),
             'descripcion' => fake()->realTextBetween(1, 10),
