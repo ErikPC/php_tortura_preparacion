@@ -35,6 +35,10 @@ class Carta extends Model
 {
     use HasFactory;
 
+    protected $table = 'carta';
+
+    public $timestamps = false;
+
     protected $fillable = [
         'nombre',
         'precio',
@@ -77,7 +81,6 @@ return new class extends Migration
     {
         Schema::create('carta', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('nombre');
             $table->double('precio');
             $table->string('texto');
@@ -98,4 +101,64 @@ return new class extends Migration
     }
 };
 
+```
+
+Crear los seeders con el somando `php artisan make:seeder $nombreSeeder`
+
+Crear el seeder de forma que quede algo así.
+
+```PHP
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Deck;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+class DeckSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Deck::factory(2)->create();
+    }
+}
+```
+
+Modificar los Factory para que tenga los parametros para generar los seeders. de forma que quede algo así:
+
+```PHP
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Expansion>
+ */
+class ExpansionFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition()
+    {
+        return [
+            'nombre' => fake()->realTextBetween(1.10),
+            'precio' => 110.00,
+            'fecha' => fake()->date(),
+            'descripcion' => fake()->realTextBetween(1, 10),
+            'cantidad-cartas' => 121,
+            'id-ex' => fake()->realTextBetween(1, 10)
+        ];
+    }
+}
 ```
