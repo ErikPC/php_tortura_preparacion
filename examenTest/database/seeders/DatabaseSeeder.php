@@ -25,7 +25,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
 
             DeckSeeder::class,
-            ExpsansionSeeder::class
+            ExpsansionSeeder::class,
+            CartaSeeder::class
         ]);
     }
 }
