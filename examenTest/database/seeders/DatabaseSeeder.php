@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\Comunidad;
 use App\Models\Deck;
 use Illuminate\Database\Seeder;
 
@@ -26,7 +27,8 @@ class DatabaseSeeder extends Seeder
 
             DeckSeeder::class,
             ExpsansionSeeder::class,
-            CartaSeeder::class
+            CartaSeeder::class,
+            ComunidadSeeder::class,
         ]);
     }
 }
